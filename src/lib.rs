@@ -39,6 +39,10 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     results
 }
 
+pub fn search_case_insensitive() -> Vec<&'a str>{
+
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -49,7 +53,8 @@ mod tests {
         let contents = "\
 Rust:
 safe, fast, productive.
-Pick three.";
+Pick three.
+Duct tape";
 
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
